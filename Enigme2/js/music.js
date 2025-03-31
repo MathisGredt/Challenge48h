@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function validateOrder() {
         if (JSON.stringify(originalOrder) === JSON.stringify(correctOrder) && unusedSound !== null) {
-            document.getElementById("result").innerText = "Bravo, vous avez trouvé le bon ordre et placé l'extrait inutile !";
+            window.location.href = "../html/security.html";
         } else {
             document.getElementById("result").innerText = "Mauvais ordre ou extrait inutile mal placé, essayez encore !";
             resetGame();
