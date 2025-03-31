@@ -1,0 +1,95 @@
+@font-face {
+    font-family: typewriter;
+    src: url('../assets/fonts/typewriter/JMH\ Typewriter.ttf');
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: url('../assets/img/background.png') no-repeat center center/cover;
+  }
+  
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    pointer-events: none;
+    transition: background 0.05s;
+  }
+  
+  #objet {
+    cursor: pointer;
+    position: absolute;
+    top: 70%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .battery_div {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 200px;
+    height: 30px;
+  }
+
+  #battery {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 10px;
+    left: 40px;
+    width: 200px;
+    height: 30px;
+    background: rgba(0,0,0,0.5);
+    border: 2px solid #fff;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  #batteryFill {
+    height: 100%;
+    width: 100%;
+    background: green;
+  }
+  
+  #toggle_flashlight {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 50px;
+    left: 10px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 18px;
+    background: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  #toggle_text {
+    font-family: typewriter, sans-serif;
+  }
+
+  #space_key {
+    width: 100px;
+    height: 40px;
+    margin-right: 20px;
+  }
+
+  .enigme_header h1 {
+    cursor: default;
+    font-family: typewriter, sans-serif;
+    position: fixed;
+    bottom: 50%;
+    left: 30%;
+  }
