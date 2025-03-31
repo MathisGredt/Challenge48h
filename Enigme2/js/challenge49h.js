@@ -9,21 +9,39 @@ function updatePage() {
     if (showError) {
         contentDiv.innerHTML = `
                     <div class="error-container">
-                        <h1>Erreur de Session</h1>
-                        <p>Une erreur fatale s'est produite. Veuillez vérifier les paramètres.</p>
+                        <h1>FATAL ERROR - SESSION CORRUPTED</h1>
+                        <p>
+                            SYSTEM FAILURE DETECTED...
+                            Attempting recovery...
+                            ERROR CODE: 0xC000021A
+                            MEMORY DUMP IN PROGRESS...
+                            SYSTEM SHUTDOWN INITIATED.
+                            CONTACT ADMINISTRATOR FOR ASSISTANCE.
+                        </p>
                     </div>`;
     } else {
         contentDiv.innerHTML = `
                     <div class="success-container">
-                        <h1>Bravo !</h1>
-                        <p>Vous avez terminé le tutoriel, vous pouvez commencer le vrai challenge.</p>
+                        <h1>SUCCESS - ACCESS GRANTED</h1>
+                        <p>
+                            SYSTEM AUTHENTICATION COMPLETE...
+                            USER VERIFICATION: PASSED
+                            INITIALIZING MAIN SYSTEM...
+                            LOADING TRUE CHALLENGE...
+                            
+                            YOU HAVE NOW FINISHED THE TUTORIAL,
+                            YOU CAN START THE TRUE CHALLENGE !
+                        </p>
                         <button onclick="startChallenge()">Start True Challenge</button>
                     </div>`;
     }
 }
 
 function startChallenge() {
-    alert("Le vrai challenge commence maintenant !");
+    alert("POISSON D'AVRIL ! AHAHAHAHAHAHAHAHA");
 }
+
+window.addEventListener("storage", updatePage);
+setInterval(updatePage, 500);
 
 updatePage();
