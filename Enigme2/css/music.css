@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    margin: 0;
+    background-image: url("../assets/image 37.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+}
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #444;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+}
+button:hover {
+    background-color: #666;
+    transform: scale(1.1);
+}
+button:active {
+    transform: scale(0.95);
+}
+.selected-sequence {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+#result {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}

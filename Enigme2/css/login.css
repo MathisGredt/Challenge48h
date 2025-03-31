@@ -7,11 +7,23 @@
 .background {
     height: 100vh;
     width: 100vw;
-    background-image: url('../assets/background_login.png');
+    background-image: url('../assets/image 43.png');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+/* Style de la div conteneur du formulaire */
+.form-container {
+    background: rgba(0, 0, 0, 0.9); /* Fond sombre avec transparence */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    width: 300px; /* Largeur fixe pour le formulaire */
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -23,10 +35,10 @@ input[type="password"] {
     font-family: "Times New Roman", serif;
     background: #d4d0c8;
     border: 2px solid #808080;
-    border-radius: 3px;
-    box-shadow: inset 2px 2px 2px #ffffff, inset -2px -2px 2px #505050;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.2);
     outline: none;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Effet au focus */
@@ -56,26 +68,26 @@ button[type="submit"] {
 button[type="submit"] {
     width: 100%;
     padding: 15px;
-    background: linear-gradient(to bottom, #d4d0c8, #a8a8a8);
-    color: black;
+    background: linear-gradient(to bottom, #6e7f9d, #4f5f7d);
+    color: white;
     font-size: 18px;
     font-family: "Times New Roman", serif;
     font-weight: bold;
-    border: 2px solid #808080;
-    border-radius: 3px;
-    box-shadow: inset 2px 2px 2px #ffffff, inset -2px -2px 2px #505050;
+    border: 2px solid #505050;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.3);
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Effet au survol */
 button[type="submit"]:hover {
-    background: linear-gradient(to bottom, #a8a8a8, #d4d0c8);
+    background: linear-gradient(to bottom, #4f5f7d, #6e7f9d);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Effet au clic */
 button[type="submit"]:active {
-    box-shadow: inset 2px 2px 4px #505050, inset -2px -2px 4px #ffffff;
-    background: linear-gradient(to bottom, #a0a0a0, #707070);
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5), inset -2px -2px 4px rgba(255, 255, 255, 0.5);
+    background: linear-gradient(to bottom, #3a4c6a, #5a6c8a);
 }
-
