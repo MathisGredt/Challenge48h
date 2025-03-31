@@ -10,4 +10,72 @@
     background-image: url('../assets/background_login.png');
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+/* Style de l'input */
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-family: "Times New Roman", serif;
+    background: #d4d0c8;
+    border: 2px solid #808080;
+    border-radius: 3px;
+    box-shadow: inset 2px 2px 2px #ffffff, inset -2px -2px 2px #505050;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Effet au focus */
+input[type="password"]:focus {
+    border-color: #505050;
+    background: #c0c0c0;
+}
+
+/* Ajout d'un espace entre les éléments */
+input[type="password"],
+.error-message,
+button[type="submit"] {
+    margin-bottom: 15px;
+}
+
+/* Style du message d'erreur */
+.error-message {
+    color: red;
+    font-size: 18px;
+    font-family: "Times New Roman", serif;
+    font-weight: bold;
+    display: none;
+    text-align: center;
+}
+
+/* Style du bouton */
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to bottom, #d4d0c8, #a8a8a8);
+    color: black;
+    font-size: 18px;
+    font-family: "Times New Roman", serif;
+    font-weight: bold;
+    border: 2px solid #808080;
+    border-radius: 3px;
+    box-shadow: inset 2px 2px 2px #ffffff, inset -2px -2px 2px #505050;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Effet au survol */
+button[type="submit"]:hover {
+    background: linear-gradient(to bottom, #a8a8a8, #d4d0c8);
+}
+
+/* Effet au clic */
+button[type="submit"]:active {
+    box-shadow: inset 2px 2px 4px #505050, inset -2px -2px 4px #ffffff;
+    background: linear-gradient(to bottom, #a0a0a0, #707070);
+}
+
