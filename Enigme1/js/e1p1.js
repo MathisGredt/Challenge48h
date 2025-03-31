@@ -1,4 +1,18 @@
 const button = document.getElementById("btnFuyant");
+const passwordInput = document.getElementById("passwordInput");
+const correctPassword = "monSecret"; // Remplacez par le mot de passe correct
+
+button.addEventListener("click", () => {
+    const enteredPassword = passwordInput.value;
+
+    if (enteredPassword === correctPassword) {
+        // Redirige vers une autre page si le mot de passe est correct
+        window.location.href = "pageSuivante.html"; // Remplacez par l'URL de la page cible
+    } else {
+        // Affiche un message d'erreur si le mot de passe est incorrect
+        alert("Mot de passe incorrect. Veuillez réessayer.");
+    }
+});
 
 document.addEventListener("mousemove", (event) => {
     const mouseX = event.clientX;
@@ -9,10 +23,10 @@ document.addEventListener("mousemove", (event) => {
 
     const distance = Math.hypot(mouseX - btnX, mouseY - btnY);
 
-    if (distance < 100) { // Distance de déclenchement
+    if (distance < 100) { 
         const angle = Math.atan2(btnY - mouseY, btnX - mouseX);
-        const moveX = Math.cos(angle) * 50; // Distance de fuite
-        const moveY = Math.sin(angle) * 50;
+        const moveX = Math.cos(angle) * 500;
+        const moveY = Math.sin(angle) * 450;
 
         button.style.transform = `translate(${moveX}px, ${moveY}px)`;
     }
