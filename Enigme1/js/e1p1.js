@@ -1,6 +1,6 @@
 const button = document.getElementById("btnFuyant");
 const passwordInput = document.getElementById("passwordInput");
-const correctPassword = "Cyril > Allan"; 
+const correctPassword = "Motdepassefinal"; 
 
 button.addEventListener("click", () => {
     const enteredPassword = passwordInput.value;
