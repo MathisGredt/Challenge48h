@@ -1,15 +1,15 @@
 const button = document.getElementById("btnFuyant");
 const passwordInput = document.getElementById("passwordInput");
-const correctPassword = "monSecret"; // Remplacez par le mot de passe correct
+const correctPassword = "Cyril > Allan"; 
 
 button.addEventListener("click", () => {
     const enteredPassword = passwordInput.value;
 
     if (enteredPassword === correctPassword) {
-        // Redirige vers une autre page si le mot de passe est correct
-        window.location.href = "pageSuivante.html"; // Remplacez par l'URL de la page cible
+        
+        window.location.href = "/Enigme2/ep2p1.html";
     } else {
-        // Affiche un message d'erreur si le mot de passe est incorrect
+        
         alert("Mot de passe incorrect. Veuillez réessayer.");
     }
 });
