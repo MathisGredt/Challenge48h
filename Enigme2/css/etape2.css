@@ -6,19 +6,127 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .center-box {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px 40px;
-    border-radius: 10px;
+    background-color: rgba(0.5, 0.5, 0.5, 0.5);
+    border-radius: 15px;
     color: white;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
+    height: 90%;
+    width: 700px; /* Largeur fixe pour éviter le format téléphone */
+    max-width: 100%; /* Évite l'élargissement sur de très grands écrans */
+    box-sizing: border-box;
+    margin: 0 20px; /* Marge horizontale */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
 }
 
-.highlight {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 0 5px;
+#marcus-text {
+    display: none;
+    font-size: 1.2rem;
+    color: #f39c12;
+}
+
+#buttons-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.code-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid #fff;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.code-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+#code-entry {
+    font-size: 1.3rem;
+    color: yellow;
+}
+
+.action-buttons {
+}
+
+button {
+    background-color: #444;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    margin: 10px 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #666;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Media Queries pour rendre l'interface responsive */
+@media (max-width: 768px) {
+    .center-box {
+        width: 90%;
+        padding: 20px;
+        margin: 0 10px; /* Réduire la marge horizontale */
+    }
+
+    #marcus-text {
+        font-size: 1.1rem;
+    }
+
+    .code-btn {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    #code-entry {
+        font-size: 1.1rem;
+    }
+
+    button {
+        font-size: 1.1rem;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .center-box {
+        width: 100%;
+        padding: 15px;
+        margin: 0 5px; /* Encore moins de marge horizontale sur très petits écrans */
+    }
+
+    #marcus-text {
+        font-size: 1rem;
+    }
+
+    .code-btn {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    #code-entry {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
 }

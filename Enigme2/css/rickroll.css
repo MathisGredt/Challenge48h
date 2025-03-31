@@ -1,0 +1,20 @@
+body {
+    background: url('../assets/rickroll.gif') repeat;
+    background-size: 10% auto; /* Réduit la taille de l'image à 10% de sa taille originale */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.message-box {
+    background-color: black;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    z-index: 10; /* Assure que la div noire est au-dessus des images */
+    position: relative; /* Important pour le centrer */
+}
+
