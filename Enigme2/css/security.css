@@ -1,0 +1,10 @@
+body {
+    background: url('../assets/image 44.png') no-repeat;
+    background-size: cover; /* Réduit la taille de l'image à 10% de sa taille originale */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

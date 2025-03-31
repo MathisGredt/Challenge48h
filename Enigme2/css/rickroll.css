@@ -10,11 +10,15 @@ body {
 }
 
 .message-box {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0);
     color: black;
     padding: 20px;
     text-align: center;
     z-index: 10; /* Assure que la div noire est au-dessus des images */
     position: relative; /* Important pour le centrer */
+}
+
+.message-box p {
+    color: rgba(0, 0, 0, 0);
 }
 
