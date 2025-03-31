@@ -1,0 +1,11 @@
+.redirect-btn {
+    padding: 5px 10px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.redirect-btn:hover {
+    background-color: #ccc;
+}
