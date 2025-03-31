@@ -6,5 +6,5 @@ function setCookie(name, value, days) {
 }
 
 window.onload = function() {
-    setCookie("JeSuisCaché", "/Challenge49h", 1);
+    setCookie("JeSuisCache", "/Challenge49h", 1);
 }

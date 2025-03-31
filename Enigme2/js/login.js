@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault(); // Empêche l'envoi du formulaire
 
         if (passwordInput.value === currentPassword) {
-            window.location.href = "../html/etape2.html"; // Redirige vers la page suivante
+            window.location.href = "../html/lorem.html"; // Redirige vers la page suivante
             errorMessage.style.display = "none"; // Cache le message d'erreur si correct
         } else {
             // Définir un message d'erreur aléatoire

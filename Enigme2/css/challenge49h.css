@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.error-container {
+    background-color: red;
+    color: white;
+    padding: 50px;
+    font-size: 24px;
+}
+
+.success-container {
+    background-color: green;
+    color: white;
+    padding: 50px;
+    font-size: 24px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
