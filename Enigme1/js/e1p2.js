@@ -12,7 +12,10 @@ for (let i = 1; i < totalButtons; i++) {
             button.textContent = "Gagné ! Cliquez pour continuer";
 
             button.addEventListener("click", () => {
-                window.location.href = "ep1p3.html"; 
+                setTimeout(() => {
+                    alert("Bravo ! retenez bien : Z");
+                    window.location.href = "ep1p3.html";
+                }, 5000);
             }, { once: true }); 
             
         } else {
