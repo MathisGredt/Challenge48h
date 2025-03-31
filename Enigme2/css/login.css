@@ -1,93 +1,97 @@
+/* Reset styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Background styling */
 .background {
     height: 100vh;
     width: 100vw;
-    background-image: url('../assets/image 43.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url("../assets/background.png");
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    font-family: 'Courier New', monospace;
+    color: lime;
+}a
 
-/* Style de la div conteneur du formulaire */
-.form-container {
-    background: rgba(0, 0, 0, 0.7); /* Fond sombre avec transparence */
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-    width: 300px; /* Largeur fixe pour le formulaire */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+     /* Terminal-style container */
+ .form-container {
+     background: rgba(0, 50, 0, 0.8);
+     padding: 20px;
+     border-radius: 5px;
+     box-shadow: 0 0 15px lime;
+     border: 2px solid lime;
+     width: 400px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: left;
+ }
 
-/* Style de l'input */
+/* Input styling */
 input[type="password"] {
     width: 100%;
-    padding: 15px;
+    padding: 10px;
+    margin-bottom: 15px;
     font-size: 18px;
-    font-family: "Times New Roman", serif;
-    background: #d4d0c8;
-    border: 2px solid #808080;
-    border-radius: 5px;
-    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.2);
+    font-family: 'Courier New', monospace;
+    background: black;
+    color: lime;
+    border: 2px solid lime;
+    border-radius: 3px;
     outline: none;
+    box-shadow: 0 0 10px lime;
     transition: all 0.3s ease-in-out;
 }
 
-/* Effet au focus */
+/* Input focus effect */
 input[type="password"]:focus {
-    border-color: #505050;
-    background: #c0c0c0;
+    background: rgba(0, 50, 0, 0.8);
+
 }
 
-/* Ajout d'un espace entre les éléments */
-input[type="password"],
-.error-message,
-button[type="submit"] {
-    margin-bottom: 15px;
-}
-
-/* Style du message d'erreur */
+/* Error message styling */
 .error-message {
     color: red;
     font-size: 18px;
-    font-family: "Times New Roman", serif;
+    font-family: 'Courier New', monospace;
     font-weight: bold;
     display: none;
     text-align: center;
+    border: 2px solid red;
+    background: rgba(50, 0, 0, 0.8);
+    padding: 10px;
+    box-shadow: 0 0 15px red;
 }
 
-/* Style du bouton */
+/* Button styling */
 button[type="submit"] {
     width: 100%;
-    padding: 15px;
-    background: linear-gradient(to bottom, #6e7f9d, #4f5f7d);
-    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: black;
+    color: lime;
     font-size: 18px;
-    font-family: "Times New Roman", serif;
+    font-family: 'Courier New', monospace;
     font-weight: bold;
-    border: 2px solid #505050;
-    border-radius: 5px;
-    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.3);
+    border: 2px solid lime;
+    border-radius: 3px;
+    box-shadow: 0 0 10px lime;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
 
-/* Effet au survol */
+/* Button hover effect */
 button[type="submit"]:hover {
-    background: linear-gradient(to bottom, #4f5f7d, #6e7f9d);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 50, 0, 0.8);
+    box-shadow: 0 0 15px lime;
 }
 
-/* Effet au clic */
+/* Button click effect */
 button[type="submit"]:active {
-    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5), inset -2px -2px 4px rgba(255, 255, 255, 0.5);
-    background: linear-gradient(to bottom, #3a4c6a, #5a6c8a);
+    box-shadow: inset 2px 2px 4px rgba(0, 255, 0, 0.5), inset -2px -2px 4px rgba(0, 255, 0, 0.5);
+    background: rgba(0, 100, 0, 0.8);
 }
