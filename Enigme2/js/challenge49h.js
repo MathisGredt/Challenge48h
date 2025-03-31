@@ -3,20 +3,19 @@ if (sessionStorage.getItem("ShowError") === null) {
 }
 
 function typeWriterEffect(element, text, speed = 30) {
-    element.innerHTML = ""; // Vider le contenu
+    element.innerHTML = "";
     let i = 0;
 
     function type() {
         if (i < text.length) {
             element.innerHTML += text[i];
             i++;
-            setTimeout(type, speed); // Vitesse entre chaque lettre
+            setTimeout(type, speed);
         }
     }
 
     type();
 }
-
 
 function updatePage() {
     const showError = sessionStorage.getItem("ShowError") === "true";
@@ -26,15 +25,18 @@ function updatePage() {
         contentDiv.innerHTML = `
         <div class="error-container">
             <h1>FATAL ERROR - SESSION CORRUPTED</h1>
-            <p>
-                SYSTEM FAILURE DETECTED...
-                Attempting recovery...
-                ERROR CODE: 0xC000021A
-                MEMORY DUMP IN PROGRESS...
-                SYSTEM SHUTDOWN INITIATED.
-                CONTACT ADMINISTRATOR FOR ASSISTANCE.
-            </p>
+            <p id="error-text"></p>
         </div>`;
+
+        const errorText = `SYSTEM FAILURE DETECTED...
+Attempting recovery...
+ERROR CODE: 0xC000021A
+MEMORY DUMP IN PROGRESS...
+SYSTEM SHUTDOWN INITIATED.
+CONTACT ADMINISTRATOR FOR ASSISTANCE.`;
+
+        const errorParagraph = document.getElementById("error-text");
+        typeWriterEffect(errorParagraph, errorText, 30);
     } else {
         contentDiv.innerHTML = `
         <div class="success-container">
@@ -52,9 +54,8 @@ YOU HAVE NOW FINISHED THE TUTORIAL,
 YOU CAN START THE TRUE CHALLENGE !`;
 
         const successParagraph = document.getElementById("success-text");
-        typeWriterEffect(successParagraph, successText, 30); // Vitesse rapide
+        typeWriterEffect(successParagraph, successText, 30);
     }
-
 }
 
 function startChallenge() {
@@ -67,8 +68,8 @@ setInterval(() => {
     const currentShowError = sessionStorage.getItem("ShowError");
     if (currentShowError !== lastShowError) {
         lastShowError = currentShowError;
-        updatePage(); // Met à jour la page si la valeur a changé
+        updatePage();
     }
 }, 100);
 
-updatePage(); // Charge la page initialement
+updatePage();

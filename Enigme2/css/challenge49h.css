@@ -33,6 +33,7 @@ body {
     color: white;
     font-size: 24px;
     text-transform: uppercase;
+    padding: 15px;
 }
 
 .error-container p {
