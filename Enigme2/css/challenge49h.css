@@ -1,9 +1,23 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Courier New', monospace;
     background-color: black;
-    color: red;
-    text-align: center;
-    padding: 20px;
+    height: 100vh;
+    width: 100vw;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 .error-container {
@@ -24,12 +38,17 @@ body {
 .error-container p {
     font-size: 18px;
     white-space: pre-line;
+    color: red;
+
 }
 
 .success-container {
     border: 2px solid lime;
     padding: 20px;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 50%;
     background: rgba(0, 50, 0, 0.8);
     box-shadow: 0 0 15px lime;
     text-align: left;
@@ -39,6 +58,7 @@ body {
 .success-container h1 {
     color: white;
     font-size: 24px;
+    padding: 15px ;
     text-transform: uppercase;
 }
 
