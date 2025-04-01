@@ -12,7 +12,7 @@ canvas.style.top = '50%';
 canvas.style.transform = 'translate(-50%, -50%)';
 
 const gridSize = 15;
-const cellSize = size / gridSize;
+let cellSize = size / gridSize;
 const wallWidth = 2;
 
 const visionRadius = 2.5;
@@ -20,8 +20,9 @@ const lightRadius = cellSize * 2.5;
 
 let playerCell = { x: 0, y: 0 };
 let isMoving = false;
-
 let maze = [];
+
+let currentKey = null;
 
 function initMaze() {
     maze = [];
@@ -75,16 +76,26 @@ function generateMaze() {
 function drawMaze() {
     ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--bg-color');
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    const exitX = (gridSize - 1 + 0.5) * cellSize;
+    const exitY = (gridSize - 1 + 0.5) * cellSize;
+    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--goal-color') || '#ff3333';
+    ctx.beginPath();
+    ctx.arc(exitX, exitY, cellSize / 2.5, 0, Math.PI * 2);
+    ctx.fill();
+    
     const playerX = (playerCell.x + 0.5) * cellSize;
     const playerY = (playerCell.y + 0.5) * cellSize;
     ctx.save();
     ctx.beginPath();
     ctx.arc(playerX, playerY, lightRadius, 0, Math.PI * 2);
     ctx.clip();
+    
     const minX = Math.max(0, playerCell.x - Math.ceil(visionRadius));
     const maxX = Math.min(gridSize - 1, playerCell.x + Math.ceil(visionRadius));
     const minY = Math.max(0, playerCell.y - Math.ceil(visionRadius));
     const maxY = Math.min(gridSize - 1, playerCell.y + Math.ceil(visionRadius));
+    
     for (let x = minX; x <= maxX; x++) {
         for (let y = minY; y <= maxY; y++) {
             const dist = Math.sqrt(Math.pow(x - playerCell.x, 2) + Math.pow(y - playerCell.y, 2));
@@ -122,14 +133,23 @@ function drawMaze() {
             }
         }
     }
-    if (playerCell.x === gridSize - 1 && playerCell.y === gridSize - 1) {
-        const exitX = (gridSize - 1) * cellSize + cellSize / 2;
-        const exitY = (gridSize - 1) * cellSize + cellSize / 2;
-        ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--goal-color');
+    
+    if (
+        Math.sqrt(Math.pow(gridSize - 1 - playerCell.x, 2) + Math.pow(gridSize - 1 - playerCell.y, 2)) <= visionRadius
+    ) {
+        const exitCellX = (gridSize - 1) * cellSize;
+        const exitCellY = (gridSize - 1) * cellSize;
+        const exitX = exitCellX + cellSize / 2;
+        const exitY = exitCellY + cellSize / 2;
+        ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--goal-color') || '#ff3333';
         ctx.beginPath();
-        ctx.arc(exitX, exitY, cellSize / 4, 0, Math.PI * 2);
+        ctx.arc(exitX, exitY, cellSize / 2.5, 0, Math.PI * 2);
         ctx.fill();
+        ctx.strokeStyle = 'white';
+        ctx.lineWidth = 2;
+        ctx.stroke();
     }
+    
     ctx.restore();
 }
 
@@ -153,39 +173,53 @@ function canMove(newX, newY) {
 }
 
 function updatePlayerPosition() {
-    const canvasRect = canvas.getBoundingClientRect();
-    const playerX = canvasRect.left + (playerCell.x + 0.5) * cellSize;
-    const playerY = canvasRect.top + (playerCell.y + 0.5) * cellSize;
-    playerElement.style.left = `${playerX}px`;
-    playerElement.style.top = `${playerY}px`;
-    if (playerCell.x === gridSize - 1 && playerCell.y === gridSize - 1) {
+    const playerX = (playerCell.x + 0.5) * cellSize;
+    const playerY = (playerCell.y + 0.5) * cellSize;
     
-            alert("Bravo ! retenez bien : YKG");
-            window.location.href = "/Enigme1/html/e1p3.html";
-        
+    const canvasRect = canvas.getBoundingClientRect();
+    const absoluteX = canvasRect.left + playerX;
+    const absoluteY = canvasRect.top + playerY;
+    
+    playerElement.style.left = `${absoluteX}px`;
+    playerElement.style.top = `${absoluteY}px`;
+    
+    if (playerCell.x === gridSize - 1 && playerCell.y === gridSize - 1) {
+        alert("Bravo ! retenez bien : YKG");
+        window.location.href = "/Enigme1/html/e1p3.html";
     }
 }
 
 document.addEventListener('keydown', (e) => {
     if (isMoving) return;
+    
+    if (currentKey !== null && currentKey !== e.key.toLowerCase()) {
+        return;
+    }
+    
     let newX = playerCell.x;
     let newY = playerCell.y;
-    switch (e.key) {
-        case 'ArrowUp':
+    
+    switch (e.key.toLowerCase()) {
+        case 'z':
+            currentKey = e.key.toLowerCase();
             newY--;
             break;
-        case 'ArrowDown':
+        case 's':
+            currentKey = e.key.toLowerCase();
             newY++;
             break;
-        case 'ArrowLeft':
+        case 'q':
+            currentKey = e.key.toLowerCase();
             newX--;
             break;
-        case 'ArrowRight':
+        case 'd':
+            currentKey = e.key.toLowerCase();
             newX++;
             break;
         default:
             return;
     }
+    
     if (canMove(newX, newY)) {
         isMoving = true;
         playerCell.x = newX;
@@ -197,18 +231,25 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+document.addEventListener('keyup', (e) => {
+    const key = e.key.toLowerCase();
+    if (currentKey === key) {
+        currentKey = null;
+    }
+});
+
+window.addEventListener('resize', () => {
+    const newSize = Math.min(window.innerWidth, window.innerHeight) * 0.8;
+    canvas.width = newSize;
+    canvas.height = newSize;
+    cellSize = newSize / gridSize;
+    updatePlayerPosition();
+});
+
 initMaze();
+gameLoop();
 
 function gameLoop() {
     drawMaze();
     requestAnimationFrame(gameLoop);
 }
-
-window.addEventListener('resize', () => {
-    const size = Math.min(window.innerWidth, window.innerHeight) * 0.8;
-    canvas.width = size;
-    canvas.height = size;
-    updatePlayerPosition();
-});
-
-gameLoop();
