@@ -6,22 +6,36 @@ const hint = document.getElementById('hint');
 const hintPassword = document.getElementById('hintPassword');
 const message = document.getElementById('message');
 
-function moveHintButton() {
-    const maxX = window.innerWidth - 100;
-    const maxY = window.innerHeight - 50;
-    const randomX = Math.floor(Math.random() * maxX);
-    const randomY = Math.floor(Math.random() * maxY);
-    
+let posX = Math.random() * (window.innerWidth - hintBtn.offsetWidth);
+let posY = Math.random() * (window.innerHeight - hintBtn.offsetHeight);
+let velocityX = 2;
+let velocityY = 2;
+let isMoving = true;
+
+function animate() {
+    if (!isMoving) return;
+
+    posX += velocityX;
+    posY += velocityY;
+
+    if (posX <= 0 || posX >= window.innerWidth - hintBtn.offsetWidth) {
+        velocityX = -velocityX;
+    }
+    if (posY <= 0 || posY >= window.innerHeight - hintBtn.offsetHeight) {
+        velocityY = -velocityY;
+    }
+
     hintBtn.style.position = 'absolute';
-    hintBtn.style.left = `${randomX}px`;
-    hintBtn.style.top = `${randomY}px`;
+    hintBtn.style.left = `${posX}px`;
+    hintBtn.style.top = `${posY}px`;
+
+    requestAnimationFrame(animate);
 }
 
-moveHintButton();
-
-hintBtn.addEventListener('mouseover', moveHintButton);
+animate();
 
 hintBtn.addEventListener('click', function() {
+    isMoving = false;
     hintPassword.textContent = SECRET_PASSWORD;
     hint.style.display = 'block';
     hintBtn.style.display = 'none';
@@ -47,4 +61,10 @@ submitBtn.addEventListener('contextmenu', function(e) {
     }
     
     return false;
+});
+
+window.addEventListener('resize', function() {
+
+    posX = Math.min(posX, window.innerWidth - hintBtn.offsetWidth);
+    posY = Math.min(posY, window.innerHeight - hintBtn.offsetHeight);
 });
