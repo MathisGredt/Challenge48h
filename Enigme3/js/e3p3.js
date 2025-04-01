@@ -1,4 +1,4 @@
-const SECRET_PASSWORD = "vvlfrnctvvllib";
+const SECRET_PASSWORD = "prout";
 let audioContext = null;
 let isPlaying = false;
 let stopTimeout = null;
