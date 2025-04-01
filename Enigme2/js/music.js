@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const correctOrder = [2, 1, 4, 0, 3]; // L'ordre final correct (5 extraits)
     let originalOrder = [0, 1, 2, 3, 4, 5]; // Tous les extraits au départ
+    //ordre en fonction du numéro de l'extrait : 3, 2, 5, 1, 4 et 6 est l'extrait inutile
     let unusedSound = null; // Stocke l'extrait inutile
     let currentPlayingSound = null;
 
