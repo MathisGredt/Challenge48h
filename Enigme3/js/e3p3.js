@@ -92,8 +92,12 @@ function checkPassword() {
     const messageDiv = document.getElementById('message');
 
     if (guess === SECRET_PASSWORD.toUpperCase()) {
-        messageDiv.textContent = "✅ Correct! The password was '" + SECRET_PASSWORD + "'.";
+        messageDiv.textContent = "✅ Correct! Redirecting to the next page...";
         messageDiv.className = "success";
+
+        setTimeout(() => {
+            window.location.href = "/Enigme2/html/e2p1.html"; 
+        }, 2000);
     } else {
         messageDiv.textContent = "❌ Incorrect. Try again or ask for a hint!";
         messageDiv.className = "error";
