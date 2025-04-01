@@ -2,6 +2,14 @@
 
 Bienvenue dans le **Challenge48h**, une aventure immersive où vous devrez résoudre des énigmes captivantes pour triompher. Ce projet a été conçu pour tester vos compétences en logique, en observation et en résolution de problèmes dans un délai limité.
 
+### Synopsis
+
+Vous êtes un grand adepte des brocantes, toujours à la recherche d’objets rares et mystérieux. Un jour, alors que vous flânez entre des étals poussiéreux, votre regard est attiré par un vieux papier jauni avec un logo étrange: le logo des anciens services français  . Il contient une série de chiffres que vous connaissez  : de l'hexadécimal
+Intrigué, vous décidez de l’acheter et, une fois rentré chez vous, vous le déchiffrez avec excitation. À votre grande surprise, la traduction révèle des coordonnées géographiques précises. Le mystère est trop grand pour être ignoré : vous prenez la route et vous rendez à l’endroit indiqué.
+Lorsque vous arrivez, vous découvrez un bunker oublié de la guerre froide. À l’intérieur, l’air est épais et chargé d’histoire. Dans un coin sombre, un objet inhabituel attire votre attention : un ordinateur fonctionnel datant des années 80. Trouver un tel appareil intact dans un lieu aussi ancien attise encore plus votre curiosité. Vous l’allumez et l’écran s’illumine lentement, affichant une série d’instructions énigmatiques…
+
+
+
 ---
 
 ## 📝 Description
