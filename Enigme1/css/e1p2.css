@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.message {
+    position: absolute;
+    bottom: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.player {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: var(--player-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+    transition: transform 0.2s ease;
+}
+
+/* Variables CSS pour les couleurs */
+:root {
+    --wall-color: #4488ff;
+    --path-color: #001133;
+    --player-color: #ffcc00;
+    --goal-color: #ff3333;
+    --bg-color: #000000;
+    --fog-color: #000000;
+}
