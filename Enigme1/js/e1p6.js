@@ -10,8 +10,8 @@ document.addEventListener("mousemove", (event) => {
 
     if (distance < 100) { 
         const angle = Math.atan2(btnY - mouseY, btnX - mouseX);
-        const moveX = Math.cos(angle) * 500;
-        const moveY = Math.sin(angle) * 450;
+        const moveX = Math.cos(angle) * 600;
+        const moveY = Math.sin(angle) * 350;
 
         button.style.transform = `translate(${moveX}px, ${moveY}px)`;
     }
