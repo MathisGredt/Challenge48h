@@ -13,7 +13,7 @@ body {
     align-items: center;
     height: 100vh;
     max-height: 100vh;
-    background: url(/Enigme1/assets/images/imagebackdetails.png) center center;
+    background: url(/assets/images/imagebackdetails.png) center center;
     background-size: cover;
     flex-direction: column;
     font-family: 'Georgia', serif;
