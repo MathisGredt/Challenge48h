@@ -96,7 +96,7 @@ function checkPassword() {
         messageDiv.className = "success";
 
         setTimeout(() => {
-            window.location.href = "/Enigme2/html/e2p1.html"; 
+            window.location.href = "/Enigme2/html/login.html"; 
         }, 2000);
     } else {
         messageDiv.textContent = "❌ Incorrect. Try again or ask for a hint!";
