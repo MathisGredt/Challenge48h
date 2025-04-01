@@ -14,7 +14,7 @@ for (let i = 1; i < totalButtons; i++) {
             button.addEventListener("click", () => {
                 
                     alert("Bravo ! retenez bien : ZOW");
-                    window.location.href = "/Enigme1/html/e1p2.html";
+                    window.location.href = "/html/e1p2.html";
                
             }, { once: true }); 
             
