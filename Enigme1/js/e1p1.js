@@ -2,7 +2,6 @@ const container = document.getElementById("buttons-container");
 const totalButtons = 1000;
 const btnumb = Math.floor(Math.random() * totalButtons);
 
-console.log(btnumb)
 for (let i = 1; i < totalButtons; i++) {
     const button = document.createElement("button");
     button.textContent = `Bouton ${i}`;

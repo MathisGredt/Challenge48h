@@ -2,6 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 
     background: url('/enigme1/assets/images/imagebackdetails.png') no-repeat center center;
     background-size: cover;
