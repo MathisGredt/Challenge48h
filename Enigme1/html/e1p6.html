@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secret Password Challenge</title>
+    <title>Fin Enigme 1</title>
     <link rel="stylesheet" href="/Enigme1/css/e1p6.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Secret Password Challenge</h1>
-        
-        <input type="password" id="passwordInput" placeholder="Enter password">
-        <button id="submitBtn">Submit Password</button>
-        <button id="hintBtn">Show Hint</button>
-        
-        <div id="hint">
-            <h3>Hint</h3>
-            <p>The password is: <span id="hintPassword"></span></p>
-        </div>
-        
-        <div id="message"></div>
-    </div>
+    <form id="passwordForm">
+        <input type="text" id="passwordInput" required placeholder="Password">
+        <button type="submit" id="btnFuyant">Submit</button>
+        <h1>Entrer le mot de passe final de l'énigme 1</h1>
+    </form>
+  
+    
 
+    <div id="customPopup" class="popup">
+        <div class="popup-content">
+            <p id="popupMessage"></p>
+            <button id="closePopup">OK</button>
+        </div>
+    </div>
     <script src="/Enigme1/js/e1p6.js"></script>
+    
 </body>
 </html>

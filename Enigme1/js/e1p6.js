@@ -1,48 +1,53 @@
-const SECRET_PASSWORD = "987654321";
-const hintBtn = document.getElementById('hintBtn');
-const passwordInput = document.getElementById('passwordInput');
-const submitBtn = document.getElementById('submitBtn');
-const hint = document.getElementById('hint');
-const hintPassword = document.getElementById('hintPassword');
-const message = document.getElementById('message');
+document.addEventListener("mousemove", (event) => {
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+    const button = document.getElementById("btnFuyant");
+    const btnRect = button.getBoundingClientRect();
+    const btnX = btnRect.left + btnRect.width / 2;
+    const btnY = btnRect.top + btnRect.height / 2;
 
-function moveHintButton() {
-    const maxX = window.innerWidth - 100;
-    const maxY = window.innerHeight - 50;
-    const randomX = Math.floor(Math.random() * maxX);
-    const randomY = Math.floor(Math.random() * maxY);
-    
-    hintBtn.style.position = 'absolute';
-    hintBtn.style.left = `${randomX}px`;
-    hintBtn.style.top = `${randomY}px`;
-}
+    const distance = Math.hypot(mouseX - btnX, mouseY - btnY);
 
-moveHintButton();
+    if (distance < 100) { 
+        const angle = Math.atan2(btnY - mouseY, btnX - mouseX);
+        const moveX = Math.cos(angle) * 500;
+        const moveY = Math.sin(angle) * 450;
 
-hintBtn.addEventListener('mouseover', moveHintButton);
-
-hintBtn.addEventListener('click', function() {
-    hintPassword.textContent = SECRET_PASSWORD;
-    hint.style.display = 'block';
-    hintBtn.style.display = 'none';
-});
-
-submitBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-});
-
-submitBtn.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    
-    const password = passwordInput.value;
-    
-    if (password === SECRET_PASSWORD) {
-        message.textContent = "✅ Correct password! Access granted.";
-        message.className = "success";
-    } else {
-        message.textContent = "❌ Wrong password! Try again.";
-        message.className = "error";
+        button.style.transform = `translate(${moveX}px, ${moveY}px)`;
     }
-    
-    return false;
 });
+
+document.getElementById("passwordInput").addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+    }
+});
+
+document.getElementById("passwordForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    
+    const password = document.getElementById("passwordInput").value;
+    const correctPassword = "ZOWYKGKJH";
+
+    if (password === correctPassword) {
+        showPopup("Mot de passe correct ! Redirection en cours...", "success");
+        setTimeout(() => {
+            window.location.href = "/Enigme2/html/login.html";
+        }, 2000);
+    } else {
+        showPopup("Mot de passe incorrect. Réessaie !", "error");
+    }
+});
+
+function showPopup(message, type) {
+    const popup = document.getElementById("customPopup");
+    const popupMessage = document.getElementById("popupMessage");
+    popupMessage.textContent = message;
+
+    popup.style.background = type === "success" ? "green" : "red";
+    popup.style.display = "block";
+
+    document.getElementById("closePopup").addEventListener("click", () => {
+        popup.style.display = "none";
+    });
+}

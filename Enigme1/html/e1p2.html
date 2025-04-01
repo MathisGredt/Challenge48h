@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
+    <title>Labyrinthe Carré</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trouve le bon bouton !</title>
     <link rel="stylesheet" href="../css/e1p2.css">
 </head>
 <body>
-    <header>
-    <h1>Trouve le bouton qui redirige !</h1>
-    <p>Parmi 999 boutons, un seul te mènera à la victoire. 👀</p>
-    </header>
-    <div id="buttons-container"></div>
+    <canvas id="mazeCanvas"></canvas>
+    <div class="player" id="player"></div>
+    <div class="message">Use arrow keys to navigate in the maze. Reach the red circle to win!</div>
+
     <script src="../js/e1p2.js"></script>
 </body>
 </html>
