@@ -1,78 +1,143 @@
 @font-face {
-    font-family: typewriter;
-    src: url('../assets/fonts/typewriter/JMH\ Typewriter.ttf');
+  font-family: typewriter;
+  src: url('../assets/fonts/typewriter/JMH Typewriter.ttf');
 }
 
 @font-face {
-    font-family: piratesbay;
-    src: url('../assets/fonts/PiratesBay.ttf');
+  font-family: piratesbay;
+  src: url('../assets/fonts/PiratesBay.ttf');
 }
+
 body {
-    margin: 0;
-    height: 100vh;
-    background: url('../assets/img/background.png') no-repeat center center/cover;
-    overflow: hidden;
-  }
-
-#door_img {
-    cursor: pointer;
-    position: fixed;
-    width: 20%;
-    left: 40%;
-    bottom: 0%;
+  margin: 0;
+  height: 100vh;
+  background: url('../assets/img/background.png') no-repeat center center/cover;
+  overflow: hidden;
 }
 
-
+/* Digicode en thème pirate */
 #code-container {
-    position: fixed;
-    top: 60%; 
-    left: 20%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px;
-    border: 2px solid #c19a6b;
-    border-radius: 8px;
-  }
-  
-  .digit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Pirata One', cursive;
-    color: #ffd700;
-  }
-  
-  .digit button {
-    background: none;
-    border: none;
-    color: #ffd700;
-    font-size: 1.2em;
-    cursor: pointer;
-    outline: none;
-  }
-  
-  .digit .value {
-    font-size: 2em;
-    margin: 5px 0;
-    min-width: 20px;
-    text-align: center;
-  }
-  
-  #door_error {
-    display: none;
-    color: red;
-    position: fixed;
-    bottom: 55%;
-    left: 42%;
-    font-family: typewriter, sans-serif;
-    font-size: 100%;
-  }
+position: fixed;
+top: 10%;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+gap: 15px;
+padding: 15px 20px;
+background: #f5deb3;
+background-image: linear-gradient(45deg, #f5deb3 25%, transparent 25%),
+                  linear-gradient(-45deg, #f5deb3 25%, transparent 25%),
+                  linear-gradient(45deg, transparent 75%, #f5deb3 75%),
+                  linear-gradient(-45deg, transparent 75%, #f5deb3 75%);
+background-size: 20px 20px;
+border: 4px solid #8B4513;
+border-radius: 15px;
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
 
-  #secret_message {
-    position: fixed;
-    top: 10%;
-    left: 30%;
-    font-family: piratesbay, sans-serif;
-  }
+.digit {
+display: flex;
+flex-direction: column;
+align-items: center;
+font-family: 'Pirata One', cursive;
+color: #DAA520;
+text-shadow: 2px 2px 3px #000;
+}
+
+.digit button {
+background-color: #8B4513;
+border: 2px solid #C19A6B;
+border-radius: 5px;
+color: #FFD700;
+font-size: 1.5em;
+padding: 5px 10px;
+cursor: pointer;
+transition: transform 0.1s, background-color 0.2s;
+}
+
+.digit button:hover {
+background-color: #A0522D;
+transform: scale(1.1);
+}
+
+.digit button:active {
+transform: scale(0.95);
+}
+
+.digit .value {
+font-size: 2.5em;
+margin: 10px 0;
+min-width: 30px;
+text-align: center;
+font-weight: bold;
+text-shadow: 3px 3px 4px #000;
+}
+
+/* Porte */
+#door_img {
+  cursor: pointer;
+  position: fixed;
+  width: 20%;
+  left: 40%;
+  bottom: 0;
+}
+
+#door_error {
+  display: none;
+  color: red;
+  position: fixed;
+  bottom: 55%;
+  left: 42%;
+  font-family: typewriter, sans-serif;
+  font-size: 100%;
+}
+
+/* Parchemin positionné sur le côté (ex: côté gauche) */
+#parchment {
+  position: fixed;
+  bottom: 10%;
+  left: 5%;
+  width: 300px;
+  height: 200px;
+  background: url('../assets/img/parchment.png') no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+#hidden-code {
+  cursor: default;
+  font-family: piratesbay, sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  color: #A0522D;
+  opacity: 0; /* Caché au départ */
+  transition: opacity 0.3s;
+}
+
+/* Lanterne placée initialement au-dessus de la porte */
+#lantern {
+  position: absolute;
+  width: 100px;
+  cursor: grab;
+  left: 46.5%;
+  bottom: 43%;
+  z-index: 1;
+}
+
+#pirate {
+  width: 30%;
+  position: fixed;
+  bottom: 2%;
+  right: 1%;
+}
+
+#enter_button {
+  position: fixed;
+  left: 45%;
+  bottom: 15%;
+  width: 10%;
+  display: none;
+  cursor: pointer;
+}
