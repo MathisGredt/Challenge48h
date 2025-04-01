@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url('../assets/background_1.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Courier New', monospace;
+    color: lime;
+    text-shadow: 0 0 5px lime;
+    overflow: hidden;
+}
+
+.center-box {
+    background-color: rgba(0, 0, 0, 0.9);
+    white-space: pre-line;
+    border: 2px solid lime;
+    border-radius: 15px;
+    color: lime;
+    font-size: 1.5rem;
+    text-align: left;
+    height: auto;
+    max-height: 90vh;
+    width: 1100px;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 5px;
+    box-shadow: 0 0 15px lime;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.center-box h1 {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+#marcus-text {
+    display: none;
+    font-size: 1.2rem;
+    color: yellow;
+    margin-bottom: 10px;
+}
+
+#buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.code-btn {
+    background-color: black;
+    border: 2px solid lime;
+    color: lime;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0 10px lime;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.code-btn:hover {
+    background-color: rgba(0, 255, 0, 0.2);
+    transform: scale(1.1);
+}
+
+#code-entry {
+    font-size: 1.3rem;
+    color: yellow;
+    text-shadow: 0 0 5px yellow;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: black;
+    border: 2px solid lime;
+    color: lime;
+    font-size: 1.2rem;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0 10px lime;
+}
+
+button:hover {
+    background-color: rgba(0, 255, 0, 0.2);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    .center-box {
+        width: 90%;
+        margin: 0 10px;
+        max-height: 85vh;
+    }
+
+    #marcus-text {
+        font-size: 1.1rem;
+    }
+
+    .code-btn {
+        font-size: 1rem;
+    }
+
+    #code-entry {
+        font-size: 1.1rem;
+    }
+
+    button {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .center-box {
+        width: 100%;
+        margin: 0 5px;
+        max-height: 80vh;
+    }
+
+    #marcus-text {
+        font-size: 1rem;
+    }
+
+    .code-btn {
+        font-size: 0.9rem;
+    }
+
+    #code-entry {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}

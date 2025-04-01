@@ -1,0 +1,97 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background styling */
+.background {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../assets/background_1.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', monospace;
+    color: lime;
+}a
+
+     /* Terminal-style container */
+ .form-container {
+     background: rgba(0, 50, 0, 0.8);
+     padding: 20px;
+     border-radius: 5px;
+     box-shadow: 0 0 15px lime;
+     border: 2px solid lime;
+     width: 400px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: left;
+ }
+
+/* Input styling */
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-family: 'Courier New', monospace;
+    background: black;
+    color: lime;
+    border: 2px solid lime;
+    border-radius: 3px;
+    outline: none;
+    box-shadow: 0 0 10px lime;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Input focus effect */
+input[type="password"]:focus {
+    background: rgba(0, 50, 0, 0.8);
+
+}
+
+/* Error message styling */
+.error-message {
+    color: red;
+    font-size: 18px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    display: none;
+    text-align: center;
+    border: 2px solid red;
+    background: rgba(50, 0, 0, 0.8);
+    padding: 10px;
+    box-shadow: 0 0 15px red;
+}
+
+/* Button styling */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: black;
+    color: lime;
+    font-size: 18px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    border: 2px solid lime;
+    border-radius: 3px;
+    box-shadow: 0 0 10px lime;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+button[type="submit"]:hover {
+    background: rgba(0, 50, 0, 0.8);
+    box-shadow: 0 0 15px lime;
+}
+
+/* Button click effect */
+button[type="submit"]:active {
+    box-shadow: inset 2px 2px 4px rgba(0, 255, 0, 0.5), inset -2px -2px 4px rgba(0, 255, 0, 0.5);
+    background: rgba(0, 100, 0, 0.8);
+}
