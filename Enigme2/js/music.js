@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     const sounds = [
-        new Audio('/enigme2/assets/music/extrait_4.mp4'),
-        new Audio('/enigme2/assets/music/extrait_2.mp4'),
-        new Audio('/enigme2/assets/music/extrait_1.mp4'),
-        new Audio('/enigme2/assets/music/extrait_5.mp4'),
-        new Audio('/enigme2/assets/music/extrait_3.mp4'),
-        new Audio('/enigme2/assets/music/extrait_6.mp4')
+        new Audio('assets/music/extrait_4.mp4'),
+        new Audio('assets/music/extrait_2.mp4'),
+        new Audio('assets/music/extrait_1.mp4'),
+        new Audio('assets/music/extrait_5.mp4'),
+        new Audio('assets/music/extrait_3.mp4'),
+        new Audio('assets/music/extrait_6.mp4')
     ];
 
     const container = document.getElementById("buttons-container");
