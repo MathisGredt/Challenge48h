@@ -54,7 +54,7 @@ submitBtn.addEventListener('contextmenu', function(e) {
         message.textContent = "✅ Correct password! Access granted.";
         message.className = "success";
         alert("Bravo ! retenez bien : KJH");
-        window.location.href = "/html/e1p6.html";
+        window.location = "/enigme1/part6";
     } else {
         message.textContent = "❌ Wrong password! Try again.";
         message.className = "error";

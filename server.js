@@ -1,30 +1,24 @@
 const express = require('express');
-const app = express();
 const path = require('path');
 
-// Servir les fichiers statiques
-app.use(express.static(path.join(__dirname, 'Enigme1/')));
-app.use(express.static(path.join(__dirname, 'Enigme2/')));
-app.use(express.static(path.join(__dirname, 'Enigme3/')));
+const app = express();
+const PORT = 3000;
 
-/* Servir les fichiers statiques
-app.use(express.static(path.join(__dirname, 'Enigme1/css')));
-app.use(express.static(path.join(__dirname, 'Enigme2/css')));
-app.use(express.static(path.join(__dirname, 'Enigme3/css')));
+const enigme1Router = require('./routes/enigme1.route');
+const enigme2Router = require('./routes/enigme2.route');
+const enigme3Router = require('./routes/enigme3.route');
+const homeRouter = require('./routes/home.route')
+const exp = require('constants');
 
-// Servir les fichiers statiques
-app.use(express.static(path.join(__dirname, 'Enigme1/js')));
-app.use(express.static(path.join(__dirname, 'Enigme2/js')));
-app.use(express.static(path.join(__dirname, 'Enigme3/js')));
- */
+app.use('/enigme1', enigme1Router);
+app.use('/enigme2', enigme2Router);
+app.use('/enigme3', enigme3Router);
+app.use('/home', homeRouter);
 
-// Route par défaut
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Enigme1/html', 'index.html'));
+  res.redirect('/home');
 });
 
-// Démarrer le serveur
-const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`Serveur démarré sur http://localhost:${PORT}`);
+  console.log(`Serveur démarré sur http://localhost:${PORT}`);
 });

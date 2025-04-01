@@ -32,7 +32,7 @@ document.getElementById('door_img').addEventListener('click', () => {
   console.log("Code entré :", currentCode);
 
   if (currentCode === "6249") {
-    document.getElementById("door_img").src = "../assets/img/door_open.png"
+    document.getElementById("door_img").src = "/enigme2/assets/img/door_open.png"
     document.getElementById("door_error").style.display = "none";
     document.getElementById("enter_button").style.display = "block";
   } else {

@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const buttonsContainer = document.getElementById('buttons-container');
     const actionButtons = document.querySelector('.action-buttons');
     let enteredCode = '';
-
-    // Fonction pour afficher les éléments progressivement
+    
     function fadeInElements(elements, delay = 200) {
         elements.forEach((el, index) => {
             setTimeout(() => {
@@ -17,25 +16,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Fonction d'effet typewriter
     function typeWriterEffect(element, text, speed, callback = null) {
-        element.innerHTML = ""; // Vider le contenu initialement
+        element.innerHTML = "";
         let i = 0;
 
         function type() {
             if (i < text.length) {
                 element.innerHTML += text[i];
                 i++;
-                setTimeout(type, speed); // Vitesse entre chaque lettre
+                setTimeout(type, speed);
             } else if (callback) {
-                callback(); // Appeler le callback une fois le texte écrit
+                callback();
             }
         }
 
         type();
     }
 
-    // Textes à faire apparaître dans l'effet typewriter
     const successText = `Ce qui est caché l'est parfois moins qu'on le croit ...
 
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
@@ -45,14 +42,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                 dolor in reprehenderit in voluptate music velit esse cillum dolore eu 
                                 fugiat nulla pariatur.`;
 
-    // Écrire le texte "hidden-text" avec effet typewriter
     const successParagraph = document.getElementById("hidden-text");
     typeWriterEffect(successParagraph, successText.toUpperCase(), 10, function() {
-        // Faire apparaître les boutons et le texte après le typewriter
         fadeInElements([codeEntry, ...codeButtons, clearButton, validateButton]);
     });
 
-    // Ajouter l'événement de clic sur chaque bouton
     codeButtons.forEach(button => {
         button.addEventListener('click', function() {
             enteredCode += this.getAttribute('data-value');
@@ -60,18 +54,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Ajouter l'événement de clic pour le bouton "Effacer"
     clearButton.addEventListener('click', function() {
         enteredCode = '';
         codeEntry.textContent = 'Code: ';
     });
 
-    // Ajouter l'événement de clic pour le bouton "Valider"
     validateButton.addEventListener('click', function() {
         if (enteredCode === 'MARCUS') {
-            window.location.href = 'rickroll.html';
+            window.location = '/enigme3/rickroll';
         } else if (enteredCode === 'MUSIC') {
-            window.location.href = 'music.html';
+            window.location = '/enigme3/part3';
         } else {
             alert('Code incorrect, essayez encore.');
         }

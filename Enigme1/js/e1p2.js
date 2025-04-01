@@ -185,7 +185,7 @@ function updatePlayerPosition() {
     
     if (playerCell.x === gridSize - 1 && playerCell.y === gridSize - 1) {
         alert("Bravo ! retenez bien : YKG");
-        window.location.href = "/html/e1p3.html";
+        window.location = "/enigme1/part3";
     }
 }
 

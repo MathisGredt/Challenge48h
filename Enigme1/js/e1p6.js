@@ -32,7 +32,7 @@ document.getElementById("passwordForm").addEventListener("submit", (event) => {
     if (password === correctPassword) {
         showPopup("Mot de passe correct ! Redirection en cours...", "success");
         setTimeout(() => {
-            window.location.href = "/html/e3p1.html";
+            window.location = "/enigme2";
         }, 2000);
     } else {
         showPopup("Mot de passe incorrect. Réessaie !", "error");

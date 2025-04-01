@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     const sounds = [
-        new Audio('../assets/music/extrait_4.mp4'),
-        new Audio('../assets/music/extrait_2.mp4'),
-        new Audio('../assets/music/extrait_1.mp4'),
-        new Audio('../assets/music/extrait_5.mp4'),
-        new Audio('../assets/music/extrait_3.mp4'),
-        new Audio('../assets/music/extrait_6.mp4')
+        new Audio('/enigme2/assets/music/extrait_4.mp4'),
+        new Audio('/enigme2/assets/music/extrait_2.mp4'),
+        new Audio('/enigme2/assets/music/extrait_1.mp4'),
+        new Audio('/enigme2/assets/music/extrait_5.mp4'),
+        new Audio('/enigme2/assets/music/extrait_3.mp4'),
+        new Audio('/enigme2/assets/music/extrait_6.mp4')
     ];
 
     const container = document.getElementById("buttons-container");
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function validateOrder() {
         if (JSON.stringify(originalOrder) === JSON.stringify(correctOrder) && unusedSound !== null) {
-            window.location.href = "../html/security.html";
+            window.location.href = "/enigme3/part4";
         } else {
             document.getElementById("result").innerText = "Mauvais ordre ou extrait inutile mal placé, essayez encore !";
             resetGame();

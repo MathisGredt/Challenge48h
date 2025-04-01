@@ -5,13 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const errorMessage = document.getElementById("error-message");
 
     form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Empêche l'envoi du formulaire
+        event.preventDefault();
 
         if (passwordInput.value === currentPassword) {
-            window.location.href = "../html/lorem.html"; // Redirige vers la page suivante
-            errorMessage.style.display = "none"; // Cache le message d'erreur si correct
+            window.location = "/enigme3/part2";
+            errorMessage.style.display = "none";
         } else {
-            // Définir un message d'erreur aléatoire
             const errorMessages = [
                 "Le mot de passe est incorrect",
                 "This password is wrong",

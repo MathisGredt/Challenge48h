@@ -2,6 +2,7 @@ const container = document.getElementById("buttons-container");
 const totalButtons = 1000;
 const btnumb = Math.floor(Math.random() * totalButtons);
 
+console.log(btnumb)
 for (let i = 1; i < totalButtons; i++) {
     const button = document.createElement("button");
     button.textContent = `Bouton ${i}`;
@@ -14,7 +15,7 @@ for (let i = 1; i < totalButtons; i++) {
             button.addEventListener("click", () => {
                 
                     alert("Bravo ! retenez bien : ZOW");
-                    window.location.href = "/html/e1p2.html";
+                    window.location = "/enigme1/part2";
                
             }, { once: true }); 
             
