@@ -5,7 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     max-height: 100vh;
-    background: url(/assets/images/imagebackdetails.png) no-repeat center center;
+    background: url(/Enigme1/assets/images/imagebackdetails.png) no-repeat center center;
     background-size: cover;
     flex-direction: column;
     font-family: 'Georgia', serif;

@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: url(/assets/images/imagebackdetails.png) no-repeat center center;
+    background: url(/Enigme1/assets/images/imagebackdetails.png) no-repeat center center;
     background-size: cover;
     flex-direction: column-reverse;
     font-family: 'Georgia', serif;
