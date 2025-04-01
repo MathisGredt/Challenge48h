@@ -1,10 +1,40 @@
 body {
     background: url('../assets/image 44.png') no-repeat;
-    background-size: cover; /* Réduit la taille de l'image à 10% de sa taille originale */
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: lime;
+    text-shadow: 0 0 5px lime;
+}
+
+.terminal {
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 2px solid lime;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    box-shadow: 0 0 15px lime;
+    overflow: hidden;
+    white-space: pre-line;
+    text-align: left;
+    height: auto;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 18px;
+    background-color: lime;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
 }
